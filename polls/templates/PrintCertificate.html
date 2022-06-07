@@ -1,21 +1,171 @@
 {% load static %}
 
+<head>
+    <style>
+        div{
+            width: 600px; 
+            border: 5px solid green; 
+            margin-left:350px;
+            padding-left: 30px;
+        }
+
+        td {
+         padding: 1px;
+         font-weight: bold;
+        }
+    </style>
+</head>
+
 {% block content %}
-<h1><br><br>CERTIFICATE PRINTING ENGINE<br><br></h1>
+<br><br>
+<div>
+<h1 style="text-align: center">Certifiacte Printing Engine<br></h1>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <h4>
-    Enter First Name: <input type="text" name="first" placeholder="first name" required>
-    Enter Last Name: <input type="text" name="last" placeholder="last name" required><br><br>
-    Enter date of completion: <input type='date' name="date" required><br><br>
-    Enter Template file path: <input type='file' name="inFile" required><br><br>
-    Name Position:<br>
-    X: <input type='number' name="xtext" value="450"> Y: <input type='number' name="ytext" value="320"><br><br>
+    <table style="width:100%">
+        <tr>
+          <td>First Name</td>
+          <td>Last Name</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="first" placeholder="first name" required></td>
+            <td><input type="text" name="last" placeholder="last name" required></td>
+        </tr>
+        <tr>
+            <td>Date of completion</td>
+            <td>Template file path</td>
+        </tr>
+        <tr>
+            <td><input type='date' name="date" required></td>
+            <td><input type='file' name="inFile" required></td>
+        </tr>
+        <tr>
+            <td>Name Position</td>
+            <td>Date Position</td>
+        </tr>
+        <tr>
+            <td>x-axis</td>
+            <td>x-axis</td>
+        </tr>
+        <tr>
+            <td><input type='number' name="xtext" value="450"> </td>
+            <td><input type='number' name="xdate" value="275"></td>
+        </tr>
+        <tr>
+            <td>y-axis</td>
+            <td>y-axis</td>
+        </tr>
+        <tr>
+            <td><input type='number' name="ytext" value="320"></td>
+            <td><input type='number' name="ydate" value="735"></td>
+        </tr>
+        <tr>
+            <td>Name Format</td>
+            <td>Date Format</td>
+        </tr>
+        <tr>
+            <td><label for="tFont">Font Type</label></td>
+            <td><label for="dFont">Font Type</label></td>
+        </tr>
+        <tr>
+            <td><select name="tFont" id="tFont">
+                <option value="arialbd.ttf">Arial Bold</option>
+                <option value="ariali.ttf">Arial Italic</option>
+                <option value="arialbd.ttf">Arial Bold Italic</option>
+                <option value="ariblk.ttf">Arial Black </option>
+                <option value="bahnschrift.ttf">Bahnschrift </option>	
+                <option value="calibril.ttf">Calibri </option>
+                <option value="calibrili.ttf">Calibri Light Italic</option>
+                <option value="calibri.ttf">Calibri</option>
+                <option value="calibrii.ttf">Calibri Italic</option>
+                <option value="calibrib.ttf">Calibri Bold</option>
+                <option value="calibriz.ttf">Calibri Bold Italic</option>
+                <option value="cambriai.ttf">Cambria Italic</option>
+                <option value="cambriab.ttf">Cambria Bold</option>
+                <option value="cambriaz.ttf">Cambria Bold Italic</option>
+                <option value="georgiab.ttf">Georgia Bold</option>
+                <option value="timesbd.ttf">Times New Roman Bold</option>
+            </select></td>
+            <td><select name="dFont" id="dFont">
+                <option value="arialbd.ttf">Arial Bold</option>
+                <option value="ariali.ttf">Arial Italic</option>
+                <option value="arialbd.ttf">Arial Bold Italic</option>
+                <option value="ariblk.ttf">Arial Black </option>
+                <option value="bahnschrift.ttf">Bahnschrift </option>	
+                <option value="calibril.ttf">Calibri </option>
+                <option value="calibrili.ttf">Calibri Light Italic</option>
+                <option value="calibri.ttf">Calibri</option>
+                <option value="calibrii.ttf">Calibri Italic</option>
+                <option value="calibrib.ttf">Calibri Bold</option>
+                <option value="calibriz.ttf">Calibri Bold Italic</option>
+                <option value="cambriai.ttf">Cambria Italic</option>
+                <option value="cambriab.ttf">Cambria Bold</option>
+                <option value="cambriaz.ttf">Cambria Bold Italic</option>
+                <option value="consolab.ttf">Consolas Bold</option>
+                <option value="georgiab.ttf">Georgia Bold</option>
+                <option value="timesbd.ttf">Times New Roman Bold</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Font Size</td>
+            <td>Font Size</td>
+        </tr>
+        <tr>
+            <td><input type='number' name="sizeText" value="50"></td>
+            <td><input type='number' name="sizeDate" value="25"></td>
+        </tr>
+        <tr>
+            <td>Text Color</td>
+        </tr>
+        <tr>
+            <td><input type="color" name="textcolor" value="#000000"></td>
+        </tr>
+        <!-- <tr>
+            <td>Red: <input type="number" name="RED" min="0" max="255" value="0"></td>
+            <td>Green:<input type="number" name="GREEN" min="0" max="255" value="0"></td>
+            <td>Blue: <input type="number" name="BLUE" min="0" max="255" value="0"></td>
+        </tr> -->
+        <tr>
+            <td style="padding: 4px"><button type="reset">Reset</button>
+                <button type="submit">Create Certifiacte</button>
+            </td>
+        </tr>
+      </table>
+    </form>
+    <!-- <h4>
+    First Name: <br>
+    <input type="text" name="first" placeholder="first name" required>
+    Last Name: <br>
+    <input type="text" name="last" placeholder="last name" required><br><br>
+    Date of completion: <br>
+    <input type='date' name="date" required>
+    Template file path: <br>
+    <input type='file' name="inFile" required><br><br>
+    Name Position:
+    <br>
+    x-axis: <br>
+    <input type='number' name="xtext" value="450"> 
+    y-axis: <br>
+    <input type='number' name="ytext" value="320"><br><br>
     Date Position<br>
-    X: <input type='number' name="xdate" value="275"> Y: <input type='number' name="ydate" value="735"><br><br>
+    x-axis: <input type='number' name="xdate" value="275"> y-axis: <input type='number' name="ydate" value="735"><br><br>
     Name Format<br>
     <label for="tFont">Font Type:</label>
     <select name="tFont" id="tFont">
+        <option value=”arialbd.ttf”>Arial Bold</option>
+        <option value=”ariali.ttf“>Arial Italic</option>
+        <option value=”arialbd.ttf“>Arial Bold Italic</option>
+        <option value=”ariblk.ttf“>Arial Black </option>
+        <option value=”bahnschrift.ttf“>Bahnschrift </option>	
+        <option value=”calibril.ttf“>Calibri </option>
+        <option value=”calibrili.ttf“>Calibri Light Italic</option>
+        <option value=”calibri.ttf“>Calibri</option>
+        <option value=”calibrii.ttf“>Calibri Italic</option>
+        <option value=”calibrib.ttf“>Calibri Bold</option>
+        <option value=”calibriz.ttf“>Calibri Bold Italic</option>
+
+
+
         <option value="arialbd.ttf">Arial Bold</option>
         <option value="calibrib.ttf">Calibri Bold</option>
         <option value="consolab.ttf">Consolas Bold</option>
@@ -33,19 +183,20 @@ Date Format<br>
         <option value="timesbd.ttf">Times New Roman Bold</option>
     </select>
 Font Size: <input type='number' name="sizeDate" value="25"><br><br>
-Text Color: <br>  
-RED: <input type="number" name="RED" min="0" max="255" value="0">  
-GREEN<input type="number" name="GREEN" min="0" max="255" value="0">
-BLUE: <input type="number" name="BLUE" min="0" max="255" value="0"><br>
+Text Color(please specify in rgb values): <br>  
+Red: <input type="number" name="RED" min="0" max="255" value="0">  
+Green:<input type="number" name="GREEN" min="0" max="255" value="0">
+Blue: <input type="number" name="BLUE" min="0" max="255" value="0"><br>
 </h4>
-<br>
-<button type="reset">Reset</button>
-<button type="submit">Create Certifiacte</button>
+<br> -->
+<!-- <button type="reset">Reset</button>
+<button type="submit">Create Certifiacte</button> -->
 </form>
 
 {% if Outfile %}
-<p>File uploaded at: <a href="{{Outfile }}">{{ Outfile }}</a></p>
-<br><br><br>
+<p>File uploaded at: <a href="{{Outfile }}" target="_blank">{{ Outfile }}</a></p>
+<br>
+</div>
 {% endif %}
 
 {% endblock%}

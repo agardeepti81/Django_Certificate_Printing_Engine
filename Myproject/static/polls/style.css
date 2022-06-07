@@ -1,0 +1,23 @@
+li a {
+    color: rgb(255, 147, 47);
+    text-align: center;
+}
+ 
+h1 {
+    color: rgb(15, 2, 2);
+    text-align: center;
+  }
+
+h2 {
+        color: rgb(76, 0, 255);
+        text-align: center;
+}
+
+form{
+    text-align: left;
+}
+
+.certificateForm{
+  width: 500px;
+  border: 15px solid green;
+}

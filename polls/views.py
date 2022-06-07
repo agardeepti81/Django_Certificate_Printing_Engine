@@ -9,12 +9,12 @@ import os
 # Create your views here.
 def home(request):
     return render(request, 'Home.html')
-
+'''
 def greet(request):
     return HttpResponse("Happily Ever After!!")
 
 def hello(request):
-    return render(request, 'Hello.html', {'name': 'Deepti'})
+    return render(request, 'Hello.html', {'name': 'Deepti'})'''
 
 def form(request):
     return render(request, 'Calculator.html')
@@ -77,14 +77,15 @@ def printCert(request):
         sizeText = int(request.POST["sizeText"])
         dFont  = request.POST["dFont"]
         sizeDate = int(request.POST["sizeDate"])
-        RED = int(request.POST["RED"])
-        GREEN = int(request.POST["GREEN"])
-        BLUE = int(request.POST["BLUE"])
+        color = request.POST['textcolor']
+        # RED = int(request.POST["RED"])
+        # GREEN = int(request.POST["GREEN"])
+        # BLUE = int(request.POST["BLUE"])
 
         cpe = CertificatePrintingEngine()
         name = cpe.setName(first,last)
         cpe.setInputFile(myfile)
-        cpe.setTextColor(RED,GREEN,BLUE)
+        cpe.setTextColor(color)
         cpe.setTextFont(tFont,sizeText)
         cpe.setTextPosition(xtext,ytext)
         cpe.setDatePosition(xdate,ydate)
